@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>王跃凯 · 游戏策划作品集</title>
+<style>
+  :root{
+    --bg:#f7f8fa; --card:#ffffff; --ink:#1a1d23; --muted:#5b6573;
+    --line:#e6e9ef; --accent:#2563eb; --accent-soft:#eef3ff; --shadow:0 6px 24px rgba(20,30,60,.06);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px}
+  /* nav */
+  nav{position:sticky;top:0;z-index:50;background:rgba(247,248,250,.85);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line)}
+  .nav-in{max-width:980px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+  .brand{font-weight:700;font-size:17px;letter-spacing:.5px}
+  .nav-links{display:flex;gap:26px;font-size:14px;color:var(--muted)}
+  .nav-links a:hover{color:var(--accent)}
+  @media(max-width:640px){.nav-links{display:none}}
+  /* hero */
+  header{padding:84px 0 64px}
+  .eyebrow{display:inline-block;background:var(--accent-soft);color:var(--accent);font-size:13px;font-weight:600;
+    padding:5px 12px;border-radius:20px;margin-bottom:20px}
+  h1{font-size:46px;line-height:1.15;letter-spacing:-.5px;margin-bottom:14px}
+  .lede{font-size:19px;color:var(--muted);max-width:640px;margin-bottom:30px}
+  .cta{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{padding:12px 22px;border-radius:10px;font-weight:600;font-size:15px;transition:.18s}
+  .btn-primary{background:var(--accent);color:#fff}
+  .btn-primary:hover{background:#1d4fd7;transform:translateY(-1px)}
+  .btn-ghost{border:1px solid var(--line);background:var(--card)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+  /* sections */
+  section{padding:54px 0;border-top:1px solid var(--line)}
+  .sec-tag{font-size:13px;font-weight:700;color:var(--accent);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px}
+  h2{font-size:30px;letter-spacing:-.3px;margin-bottom:24px}
+  p.body{color:#3a4150;font-size:16.5px;margin-bottom:16px}
+  /* skills */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:640px){.grid2{grid-template-columns:1fr}}
+  .skill{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:var(--shadow)}
+  .skill h4{font-size:16px;margin-bottom:8px}
+  .skill p{font-size:14.5px;color:var(--muted)}
+  .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+  .chip{background:var(--accent-soft);color:var(--accent);font-size:13px;font-weight:600;padding:6px 13px;border-radius:8px}
+  /* cards */
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:var(--shadow);
+    transition:.2s;position:relative}
+  .card:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(20,30,60,.10)}
+  .card+.card{margin-top:18px}
+  .badge{display:inline-block;font-size:12px;font-weight:700;padding:4px 11px;border-radius:20px;margin-bottom:12px}
+  .badge.live{background:#e8f7ee;color:#1a8a4a}
+  .badge.wip{background:#fff3e0;color:#c9760a}
+  .badge.doc{background:var(--accent-soft);color:var(--accent)}
+  .card h3{font-size:21px;margin-bottom:6px}
+  .card .role{font-size:14px;color:var(--muted);margin-bottom:14px}
+  .card ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:6px}
+  .card li{padding-left:18px;position:relative;color:#3a4150;font-size:15.5px}
+  .card li::before{content:"";position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+  .card .doclink{margin-top:18px;display:inline-block;font-weight:600;font-size:14.5px;color:var(--accent)}
+  .card .doclink:hover{text-decoration:underline}
+  /* achievements */
+  .ach{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:6px}
+  @media(max-width:640px){.ach{grid-template-columns:1fr}}
+  .ach-item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start}
+  .ach-item .k{font-size:22px;line-height:1}
+  .ach-item .v{font-size:14.5px}
+  .ach-item .v b{display:block;font-size:15.5px;margin-bottom:2px}
+  .ach-item .v span{color:var(--muted)}
+  /* contact */
+  .contact-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px}
+  .contact-row a{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:13px 18px;font-size:15px;font-weight:600;transition:.18s}
+  .contact-row a:hover{border-color:var(--accent);color:var(--accent)}
+  footer{padding:40px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px;text-align:center}
+  .note{font-size:12.5px;color:#9aa3b2;margin-top:10px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <div class="brand">王跃凯 · WANG YUEKAI</div>
+    <div class="nav-links">
+      <a href="#about">关于</a>
+      <a href="#project">独立游戏</a>
+      <a href="#works">设计作品</a>
+      <a href="#media">自媒体 / 成就</a>
+      <a href="#contact">联系</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <span class="eyebrow">求职方向 · 游戏行业</span>
+    <h1>金融数学背景的<br>卡牌 Roguelike 设计者</h1>
+    <p class="lede">用数据建模的硬功底做游戏数值与系统设计。独立用 Godot 开发卡牌 Roguelike，重度 TCG 玩家与赛事选手，擅长把复杂系统拆解成清晰的设计。</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="#works">查看设计作品</a>
+      <a class="btn btn-ghost" href="#contact">联系我</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-tag">About</div>
+    <h2>关于我</h2>
+    <p class="body">我是王跃凯，金融数学背景（南方科技大学本科，香港城市大学硕士在读），正在向游戏策划方向转型，主攻<strong>数值策划 / 系统策划</strong>。金融建模训练给了我扎实的数据与系统化思维——这正是游戏数值设计「设计—测试—复盘—调优」所需要的同一套能力。</p>
+    <p class="body">作为重度卡牌玩家，我对构筑、数值平衡与风险收益博弈有第一线的实战理解；同时我也在独立开发自己的卡牌 Roguelike、做卡牌构筑教学自媒体，并把对经典游戏的拆解整理成设计文档。</p>
+
+    <div class="grid2" style="margin-top:24px">
+      <div class="skill">
+        <h4>数值 / 数据</h4>
+        <p>精通 Excel 数据建模与平衡测算，了解 Python / MATLAB 基础；可独立完成数值配置、资源核算与平衡迭代。</p>
+      </div>
+      <div class="skill">
+        <h4>系统 / 文档</h4>
+        <p>擅长游戏系统拆解与策划文档撰写，能把复杂机制结构化、清晰表达；具备系统化设计思维。</p>
+      </div>
+      <div class="skill">
+        <h4>引擎 / 工具</h4>
+        <p>使用 Godot 独立开发游戏，掌握 GDScript 基础；熟练运用 Codex、Claude 及 AI 生图 / 生成音乐工具提效。</p>
+      </div>
+      <div class="skill">
+        <h4>玩家视角</h4>
+        <p>全品类深度涉猎，卡牌见长：宝可梦官方道馆杯冠军、杀戮尖塔 A10、炉石传说传说段位。</p>
+      </div>
+    </div>
+
+    <div class="chips">
+      <span class="chip">数值平衡</span><span class="chip">系统设计</span><span class="chip">策划文档</span>
+      <span class="chip">Excel 建模</span><span class="chip">Godot</span><span class="chip">卡牌构筑</span>
+      <span class="chip">Roguelike</span><span class="chip">AI 工具</span>
+    </div>
+  </div>
+</section>
+
+<section id="project">
+  <div class="wrap">
+    <div class="sec-tag">Project</div>
+    <h2>独立游戏项目</h2>
+    <div class="card">
+      <span class="badge wip">开发中</span>
+      <h3>卡牌 Roguelike（暂定名）</h3>
+      <div class="role">主策划 / 独立开发 · Godot 引擎</div>
+      <p class="body" style="margin-bottom:0">独立设计与开发中的卡牌 Roguelike，覆盖核心战斗与卡牌构筑循环、数值体系与原创机制。项目展示（截图 / 设计文档 / 可玩 Demo）即将上传。</p>
+      <p class="note">＊此板块预留，待项目完善后补充截图、设计文档与试玩链接。</p>
+    </div>
+  </div>
+</section>
+
+<section id="works">
+  <div class="wrap">
+    <div class="sec-tag">Works</div>
+    <h2>设计作品 / 拆解文档</h2>
+    <div class="card">
+      <span class="badge doc">系统拆解</span>
+      <h3>《杀戮尖塔 1 &amp; 2》系统拆解案</h3>
+      <div class="role">游戏系统拆解 / 设计分析 · 约 7 页</div>
+      <ul>
+        <li>完整拆解卡牌构筑 Roguelike 的核心循环、战斗系统、三大成长资源（卡牌 / 遗物 / 药水）与难度体系。</li>
+        <li>专章分析《杀戮尖塔 2》的设计演进（附魔系统、新角色资源机制、4 人合作）及其背后的设计意图。</li>
+        <li>结尾把分析方法落回自研项目，提炼可借鉴的设计原则。</li>
+      </ul>
+      <a class="doclink" href="https://pan.quark.cn/s/9d43a47c605b?pwd=R1Sg" target="_blank" rel="noopener">阅读全文（夸克网盘 · 提取码 R1Sg）→</a>
+    </div>
+  </div>
+</section>
+
+<section id="media">
+  <div class="wrap">
+    <div class="sec-tag">Media &amp; Achievements</div>
+    <h2>游戏自媒体 / 竞技成就</h2>
+
+    <div class="card">
+      <span class="badge live">运营中</span>
+      <h3>卡牌构筑教学自媒体 · 蛋堡-kkw</h3>
+      <div class="role">抖音 &amp; bilibili · 内容主理人</div>
+      <ul>
+        <li>聚焦卡牌构筑逻辑、数值博弈与对局思路，产出教学向内容；双平台累计播放量 20w+，多条单视频破万。</li>
+        <li>基于后台数据分析内容表现，发现「干货向构筑教学」流量最佳并据此迭代选题；结合受众画像（20–30 岁卡牌玩家圈层）优化定位。</li>
+        <li>通过评论、私信与核心粉丝群收集玩家反馈、反哺内容，沉淀精准垂直受众。</li>
+      </ul>
+      <a class="doclink" href="https://space.bilibili.com/57418337" target="_blank" rel="noopener">查看 B 站主页 →</a>
+    </div>
+
+    <h3 style="font-size:18px;margin:28px 0 4px">竞技成就</h3>
+    <div class="ach">
+      <div class="ach-item"><div class="k">🏆</div><div class="v"><b>宝可梦官方道馆杯 冠军</b><span>大师赛出轮选手 · 官方校园大使</span></div></div>
+      <div class="ach-item"><div class="k">⚔️</div><div class="v"><b>杀戮尖塔 1 &amp; 2 · A10</b><span>全角色通关最高难度</span></div></div>
+      <div class="ach-item"><div class="k">🃏</div><div class="v"><b>炉石传说 · 传说段位</b><span>曾进入前百排名</span></div></div>
+      <div class="ach-item"><div class="k">🎯</div><div class="v"><b>王者荣耀 · 王者段位</b><span>多款竞技游戏深度游玩</span></div></div>
+    </div>
+    <p class="body" style="margin-top:18px">全品类涉猎、卡牌见长：除卡牌外，深度体验 RPG / 开放世界（艾尔登法环、只狼）、竞技对战（英雄联盟、守望先锋、永劫无间）、Roguelike（杀戮尖塔）等多品类。</p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-tag">Contact</div>
+    <h2>联系我</h2>
+    <p class="body">欢迎就游戏策划 / 数值方向的机会与我联系。</p>
+    <div class="contact-row">
+      <a href="mailto:12210804@mail.sustech.edu.cn">✉️ 12210804@mail.sustech.edu.cn</a>
+      <a href="https://space.bilibili.com/57418337" target="_blank" rel="noopener">📺 bilibili · 蛋堡-kkw</a>
+      <a href="https://v.douyin.com/a5LlCTpoRj0/" target="_blank" rel="noopener">📱 抖音 · 蛋堡-kkw</a>
+      <a href="https://github.com/kkw114514" target="_blank" rel="noopener">💻 GitHub · kkw114514</a>
+    </div>
+    <p class="note">＊邮箱可改成你想公开的地址。</p>
+  </div>
+</section>
+
+<footer>
+  
