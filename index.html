@@ -3,7 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>王跃凯 · 游戏策划作品集</title>
+<title>王跃凯 · 游戏策划与独立开发作品集</title>
+<meta name="description" content="王跃凯的游戏策划与独立开发作品集，展示 Winterfort 卡牌 Roguelike、数值与系统设计、设计拆解及内容创作经历。">
+<meta property="og:title" content="Winterfort · 王跃凯的游戏策划与独立开发作品集">
+<meta property="og:description" content="从设计表、规则文档到 C# 战斗内核与 Godot 可运行原型。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kkw114514-lang.github.io/">
+<meta property="og:image" content="https://kkw114514-lang.github.io/og.png">
+<meta name="twitter:card" content="summary_large_image">
 <style>
   :root{
     --bg:#f7f8fa; --card:#ffffff; --ink:#1a1d23; --muted:#5b6573;
@@ -64,6 +71,11 @@
   .card li::before{content:"";position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
   .card .doclink{margin-top:18px;display:inline-block;font-weight:600;font-size:14.5px;color:var(--accent)}
   .card .doclink:hover{text-decoration:underline}
+  .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0 22px}
+  .metric{background:var(--accent-soft);border-radius:12px;padding:15px 14px}
+  .metric strong{display:block;color:var(--accent);font-size:23px;line-height:1.2;margin-bottom:4px}
+  .metric span{display:block;color:var(--muted);font-size:12.5px}
+  @media(max-width:640px){.metrics{grid-template-columns:repeat(2,1fr)}}
   /* achievements */
   .ach{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:6px}
   @media(max-width:640px){.ach{grid-template-columns:1fr}}
@@ -97,11 +109,12 @@
 
 <header>
   <div class="wrap">
-    <span class="eyebrow">求职方向 · 游戏行业</span>
-    <h1>金融数学背景的<br>卡牌 Roguelike 设计者</h1>
-    <p class="lede">用数据建模的硬功底做游戏数值与系统设计。独立用 Godot 开发卡牌 Roguelike，重度 TCG 玩家与赛事选手，擅长把复杂系统拆解成清晰的设计。</p>
+    <span class="eyebrow">游戏数值策划 · 系统策划 · 独立开发</span>
+    <h1>用可运行原型<br>验证游戏设计</h1>
+    <p class="lede">金融数学背景，专注卡牌构筑、数值平衡与系统设计。正在使用 Godot 4.7.1、C# 与 .NET 8 独立开发 PvE 卡牌 Roguelike《Winterfort》。</p>
     <div class="cta">
-      <a class="btn btn-primary" href="#works">查看设计作品</a>
+      <a class="btn btn-primary" href="#project">查看 Winterfort</a>
+      <a class="btn btn-ghost" href="#works">查看设计作品</a>
       <a class="btn btn-ghost" href="#contact">联系我</a>
     </div>
   </div>
@@ -111,8 +124,8 @@
   <div class="wrap">
     <div class="sec-tag">About</div>
     <h2>关于我</h2>
-    <p class="body">我是王跃凯，金融数学背景（南方科技大学本科，香港城市大学硕士在读），正在向游戏策划方向转型，主攻<strong>数值策划 / 系统策划</strong>。金融建模训练给了我扎实的数据与系统化思维——这正是游戏数值设计「设计—测试—复盘—调优」所需要的同一套能力。</p>
-    <p class="body">作为重度卡牌玩家，我对构筑、数值平衡与风险收益博弈有第一线的实战理解；同时我也在用 Godot 独立开发自己的卡牌 Roguelike（已设计 1,000+ 张卡牌，计划 2026 年上线 Steam）、做卡牌构筑教学自媒体，并把对经典游戏的拆解整理成设计文档。</p>
+    <p class="body">我是王跃凯，金融数学背景（南方科技大学本科，香港城市大学硕士在读），正在向游戏策划方向转型，主攻<strong>数值策划 / 系统策划</strong>。金融建模训练让我习惯用假设、数据和验证闭环处理复杂问题，这与游戏数值设计的「设计—测试—复盘—调优」高度一致。</p>
+    <p class="body">作为重度卡牌玩家，我长期关注构筑选择、数值平衡与风险收益博弈。目前正独立开发《Winterfort》，把 Excel 设计表、规则文档、C# 战斗内核、自动检查和 Godot 调试场景整合成同一条可验证的制作流程。</p>
 
     <div class="grid2" style="margin-top:24px">
       <div class="skill">
@@ -125,7 +138,7 @@
       </div>
       <div class="skill">
         <h4>引擎 / 工具</h4>
-        <p>使用 Godot 独立开发游戏，掌握 GDScript 基础；熟练运用 Codex、Claude 及 AI 生图 / 生成音乐工具提效。</p>
+        <p>使用 Godot 4.7.1、C# 与 .NET 8 开发主工程，保留 GDScript 原型经验；能使用代码与生成式 AI 工具加速验证和内容生产。</p>
       </div>
       <div class="skill">
         <h4>玩家视角</h4>
@@ -135,8 +148,8 @@
 
     <div class="chips">
       <span class="chip">数值平衡</span><span class="chip">系统设计</span><span class="chip">策划文档</span>
-      <span class="chip">Excel 建模</span><span class="chip">Godot</span><span class="chip">卡牌构筑</span>
-      <span class="chip">Roguelike</span><span class="chip">AI 工具</span>
+      <span class="chip">Excel 建模</span><span class="chip">Godot 4.7</span><span class="chip">C# / .NET 8</span>
+      <span class="chip">卡牌构筑</span><span class="chip">Roguelike</span><span class="chip">AI 辅助原型</span>
     </div>
   </div>
 </section>
@@ -146,16 +159,23 @@
     <div class="sec-tag">Project</div>
     <h2>独立游戏项目</h2>
     <div class="card">
-      <span class="badge wip">开发中 · 计划 2026 年内上线 Steam</span>
-      <h3>卡牌 Roguelike（独立游戏）</h3>
-      <div class="role">主策划 / 独立开发 · Godot 引擎</div>
+      <span class="badge wip">开发中 · 首个可玩切片整合中</span>
+      <h3>Winterfort</h3>
+      <div class="role">PvE 卡牌构筑 Roguelike · 主策划 / 独立开发 · Godot 4.7.1 / C# / .NET 8</div>
+      <div class="metrics">
+        <div class="metric"><strong>509</strong><span>自动检查点</span></div>
+        <div class="metric"><strong>65</strong><span>C# 卡牌类</span></div>
+        <div class="metric"><strong>23</strong><span>第一层普通怪</span></div>
+        <div class="metric"><strong>13</strong><span>现行设计表</span></div>
+      </div>
       <ul>
-        <li>基于 Godot 从 0 独立开发的单机卡牌 Roguelike：主导战斗循环与卡牌构筑核心机制，搭建卡牌、怪物、战利品掉落的全链路数值框架，自研数值配置表并完成多轮平衡性调优。</li>
-        <li>累计完成 <strong>1,000+ 张卡牌</strong>设计，持续迭代怪物 AI 与多层关卡流程，精准把控难度梯度、卡牌收益与博弈风险。</li>
-        <li>输出全套系统设计与数值规范文档，覆盖战斗规则、经济产出—消耗循环、流派 Build 成长体系。</li>
-        <li>借助 Claude、代码 AI 与 AI 美术 / 音频工具独立完成脚本、原画、BGM 与音效，<strong>计划 2026 年内推出可对外测试版本并上线 Steam</strong>。</li>
+        <li>围绕契约师与精灵构建单人 PvE 战斗：玩家是唯一行动主体，精灵提供常驻被动与专属卡；五种属性表达玩法方向，并可组合双属性路线。</li>
+        <li>建立现行数值标尺、卡面语言、五系与双系卡池、角色与精灵、遗物道具及第一层敌人设计，并明确区分定稿、评审稿和待裁提案。</li>
+        <li>完成确定性随机、牌堆、事件与 Hook、伤害与状态、出牌、回合、敌人和内容模型等 C# 战斗内核；24 组、509 个无头检查点已全部通过。</li>
+        <li>Godot C# 调试战斗场景已完成编译、资源导入与启动检查；当前正在把旧版完整 UI 原型接回新版内核，首个切片锁定“王女 × 炎舞”。</li>
+        <li>世界观以冻灾、回拨、钟与锚定者为核心，王室、教廷、求终者和魔法学院构成主要势力；提案内容不会自动升格为正史。</li>
       </ul>
-      <p class="note">＊游戏截图与可玩 Demo 将在后续补充。</p>
+      <p class="note">当前开发仓库保持私有；项目演示、设计样例与阶段性构建可在沟通时提供。</p>
     </div>
   </div>
 </section>
@@ -198,7 +218,7 @@
     <h3 style="font-size:18px;margin:28px 0 4px">竞技成就</h3>
     <div class="ach">
       <div class="ach-item"><div class="k">🏆</div><div class="v"><b>宝可梦官方道馆杯 冠军</b><span>大师赛出轮选手 · 官方校园大使</span></div></div>
-      <div class="ach-item"><div class="k">⚔️</div><div class="v"><b>杀戮尖塔 1 &amp; 2 · A10</b><span>全角色通关最高难度</span></div></div>
+      <div class="ach-item"><div class="k">⚔️</div><div class="v"><b>杀戮尖塔系列 · A10</b><span>多角色进阶模式实战</span></div></div>
       <div class="ach-item"><div class="k">🃏</div><div class="v"><b>炉石传说 · 传说段位</b><span>曾进入前百排名</span></div></div>
       <div class="ach-item"><div class="k">🎯</div><div class="v"><b>王者荣耀 · 王者段位</b><span>多款竞技游戏深度游玩</span></div></div>
     </div>
@@ -210,20 +230,18 @@
   <div class="wrap">
     <div class="sec-tag">Contact</div>
     <h2>联系我</h2>
-    <p class="body">欢迎就游戏策划 / 数值方向的机会与我联系。</p>
+    <p class="body">欢迎就游戏数值、系统策划、卡牌设计及独立游戏合作与我联系。</p>
     <div class="contact-row">
-      <a href="tel:+8613007306990">📞 +86 130-0730-6990</a>
       <a href="mailto:12210804@mail.sustech.edu.cn">✉️ 12210804@mail.sustech.edu.cn</a>
       <a href="https://space.bilibili.com/57418337" target="_blank" rel="noopener">📺 bilibili · 蛋堡-kkw</a>
       <a href="https://v.douyin.com/a5LlCTpoRj0/" target="_blank" rel="noopener">📱 抖音 · 蛋堡-kkw</a>
       <a href="https://github.com/kkw114514-lang" target="_blank" rel="noopener">💻 GitHub · kkw114514-lang</a>
     </div>
-    <p class="note">＊邮箱可改成你想公开的地址。</p>
   </div>
 </section>
 
 <footer>
-  © 2026 王跃凯 · 游戏策划作品集 ｜ Designed for game design roles
+  © 2026 王跃凯 · 游戏策划与独立开发作品集 ｜ 最近更新：2026 年 9 月
 </footer>
 
 </body>
